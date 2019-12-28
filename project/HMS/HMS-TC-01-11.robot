@@ -63,8 +63,8 @@ HMS-TC-10 Create care plan
     Wait And Click    ${standardValue}
     Wait And Input    ${standardValue}    70
     Wait And Click Button    xpath://button[contains(@class, 'mat-button mat-button-base ng-star-inserted')]
-    Sleep    3s
     Wait Until Element Is Visible    xpath://td[text()=' 測試用照護 ']
+    Validate Care Plan    測試用照護    體重
 
 HMS-TC-11 Edit care plan
     Wait And Click    xpath://*[contains(@class, 'nav-item')]//*[text()='照護']
