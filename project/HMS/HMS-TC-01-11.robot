@@ -16,6 +16,7 @@ HMS-TC-01 Create body observation
     Wait Until Element Is Visible    xpath://td[text()=' 50 ']
 
 HMS-TC-02 Edit body observation
+    Sleep    90s
     Wait And Click    xpath://*[contains(@class, 'nav-item')]//*[text()='身體檢測']
     Wait And Click    xpath://div[contains(@class, 'mat-radio-outer-circle')]
     Wait And Click    xpath://*[text()='修改']
@@ -67,6 +68,7 @@ HMS-TC-10 Create care plan
     Validate Care Plan    測試用照護    體重
 
 HMS-TC-11 Edit care plan
+    Sleep    90s
     Wait And Click    xpath://*[contains(@class, 'nav-item')]//*[text()='照護']
     @{radio} =    Get Elements    xpath://div[contains(@class, 'mat-radio-outer-circle')]
     Wait And Click    @{radio}[3]

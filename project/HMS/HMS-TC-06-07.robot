@@ -17,6 +17,7 @@ HMS-TC-01 Create body observation item
 
 
 HMS-TC-01 Edit body observation item
+    Sleep    90s
     Wait And Click    xpath://*[contains(@class, 'nav-item')]//*[text()='檢測項目']
     @{radio} =    Get Elements    xpath://div[contains(@class, 'mat-radio-outer-circle')]
     Wait And Click    @{radio}[4]
@@ -25,4 +26,4 @@ HMS-TC-01 Edit body observation item
     Wait And Input    xpath://*[contains(@class, 'mat-form-field-infix')]//*[contains(@ng-reflect-placeholder, 'Unit')]    xyz
     Wait And Click Button    xpath://button[contains(@class, 'mat-button mat-button-base ng-star-inserted')]
     Wait Until Element Is Visible    xpath://td[text()=' xyz ']
-        Sleep    3s
+
