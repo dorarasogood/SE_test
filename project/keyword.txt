@@ -1,0 +1,34 @@
+*** Settings ***
+Library           SeleniumLibrary
+
+*** Keywords ***
+Login
+    Open Browser    http://140.124.181.142:4200/    browser=chrome
+    Maximize Browser Window
+    
+    ${userName} =    Set Variable    //*[contains(@placeholder, 'User Name (required)')]
+    Wait Until Element Is Visible    ${userName}
+    Input Text    ${userName}    Jeff
+    
+    ${password} =    Set Variable    //*[contains(@placeholder, 'Password (required)')]
+    Wait Until Element Is Visible    ${password}
+    Input Text    ${password}    123456
+    
+    ${login} =    Set Variable    //button[contains(text(), 'Log In')]
+    Wait Until Element Is Visible    ${login}
+    Click Button    ${login}
+
+Wait And Click
+    [Arguments]    ${element}
+    Wait Until Element Is Visible    ${element}
+    Click Element    ${element}
+
+Wait And Click Button
+    [Arguments]    ${element}
+    Wait Until Element Is Visible    ${element}
+    Click Button    ${element}
+
+Wait And Input
+    [Arguments]    ${element}    ${input}
+    Wait Until Element Is Visible    ${element}
+    Input Text    ${element}    ${input}
