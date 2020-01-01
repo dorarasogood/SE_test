@@ -16,7 +16,6 @@ HMS-TC-01 Create body observation
     Wait Until Element Is Visible    xpath://td[text()=' 50 ']
 
 HMS-TC-02 Edit body observation
-    Sleep    90s
     Wait And Click    xpath://*[contains(@class, 'nav-item')]//*[text()='身體檢測']
     Wait And Click    xpath://div[contains(@class, 'mat-radio-outer-circle')]
     Wait And Click    xpath://*[text()='修改']
@@ -25,12 +24,12 @@ HMS-TC-02 Edit body observation
     Wait And Click Button    xpath://button[contains(@class, 'mat-button mat-button-base ng-star-inserted')]
     Wait Until Element Is Visible    xpath://td[text()=' 55 ']
 
-HMS-TC-05 Delete body observation
+HMS-TC-03 Delete body observation
     Wait And Click    xpath://*[contains(@class, 'nav-item')]//*[text()='身體檢測']
     Wait And Click    xpath://div[contains(@class, 'mat-radio-outer-circle')]
     Wait And Click    xpath://*[text()='刪除']
 
-HMS-TC-03 Choose date
+HMS-TC-04 Choose date
     Wait And Click    xpath://*[contains(@class, 'nav-item')]//*[text()='身體檢測']
     Wait And Click    xpath://input[contains(@startkey, 'start')]
     Wait And Input    xpath://input[contains(@startkey, 'start')]    ${EMPTY}
@@ -40,7 +39,7 @@ HMS-TC-03 Choose date
     Sleep    3s
     Wait Until Element Is Visible    xpath://td[text()=' 76 ']
 
-HMS-TC-10 Chart
+HMS-TC-07 Chart
     Wait And Click    xpath://*[contains(@class, 'nav-item')]//*[text()='圖表']
     Wait And Click    xpath://input[contains(@startkey, 'start')]
     Wait And Input    xpath://input[contains(@startkey, 'start')]    ${EMPTY}
@@ -52,7 +51,7 @@ HMS-TC-10 Chart
     Sleep    3s
     Wait Until Element Is Visible    xpath://*[text()='Legend']
 
-HMS-TC-10 Create care plan
+HMS-TC-08-09 Create care plan
     Wait And Click    xpath://*[contains(@class, 'nav-item')]//*[text()='照護']
     Wait And Click    xpath://*[text()='新增']
     ${carePlanName} =    Set Variable    //*[contains(@class, 'mat-form-field-infix')]//*[contains(@ng-reflect-placeholder, '照護名稱')]
@@ -67,8 +66,7 @@ HMS-TC-10 Create care plan
     Wait Until Element Is Visible    xpath://td[text()=' 測試用照護 ']
     Validate Care Plan    測試用照護    體重
 
-HMS-TC-11 Edit care plan
-    Sleep    90s
+HMS-TC-10 Edit care plan
     Wait And Click    xpath://*[contains(@class, 'nav-item')]//*[text()='照護']
     @{radio} =    Get Elements    xpath://div[contains(@class, 'mat-radio-outer-circle')]
     Wait And Click    @{radio}[3]
@@ -79,7 +77,7 @@ HMS-TC-11 Edit care plan
     Wait And Click Button    xpath://button[contains(@class, 'mat-button mat-button-base ng-star-inserted')]
     Wait Until Element Is Visible    xpath://td[text()=' 71 ']
 
-HMS-TC-12 Delete
+HMS-TC-11 Delete care plan
     Wait And Click    xpath://*[contains(@class, 'nav-item')]//*[text()='照護']
     @{radio} =    Get Elements    xpath://div[contains(@class, 'mat-radio-outer-circle')]
     Wait And Click    @{radio}[3]
